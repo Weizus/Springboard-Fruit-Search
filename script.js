@@ -49,7 +49,7 @@ function showSuggestions(results, inputVal) {
 }
 
 function useSuggestion(e) {
-	console.log(e.srcElement.innerText);
+	console.log(`${e.srcElement.innerText}, was clicked`);
 	// ez function just set value in the input n' remove all the children nodes
 	input.value = e.srcElement.innerText;
 	suggestions.replaceChildren();	
@@ -57,7 +57,6 @@ function useSuggestion(e) {
 
 input.addEventListener('keyup', searchHandler);
 suggestions.addEventListener('click', useSuggestion);
-
 
 // Other notes:
 // console.log(`value of the input element ${input.value.toLowerCase()}`);

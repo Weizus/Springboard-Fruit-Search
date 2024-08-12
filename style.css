@@ -24,15 +24,20 @@ input {
   align-items: center;
   text-align: center;
   min-height: 100vh;
+  position: relative;
 }
 
 .search-container input,
 .search-container .suggestions {
-  /* TODO */
+  font-size: 24px; 
 }
 
 .search-container input {
-  /* TODO */
+  border: 2px solid white;
+  /* padding: 10px, 2px, 10px, 2px; */
+  padding: 5px;  
+  border-radius: 100px;
+  /* outline: none; */ /*Gets rid of the black outline in the box. I like it so I leave this in.*/
 }
 
 .search-container .suggestions {
@@ -52,7 +57,7 @@ ul li {
 }
 
 ul li:hover {
-  /* TODO */
+  background-color: black;
 }
 
 input {
