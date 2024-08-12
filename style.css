@@ -17,6 +17,10 @@ input {
   color: white;
 }
 
+input::placeholder {
+  color: white;
+}
+
 .search-container {
   display: flex;
   flex-direction: column;
