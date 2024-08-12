@@ -14,9 +14,8 @@ function search(str) {
 function searchHandler(e) {
 	// keyup event has key | code property represented as: 'Shift' | 'ShiftLeft'/'ShiftRight'
 	// another example: a | KeyA or A | KeyA
-	// clear the suggestion box
+	// clear the suggestion box and/or add suggestions
 	if (input.value !== '') {
-		suggestions.replaceChildren();
 		showSuggestions(search(input.value), e);
 	} else {
 		suggestions.replaceChildren();
@@ -34,6 +33,7 @@ function showSuggestions(results, inputVal) {
 	// the code suggests a ul
 	console.log(`User pressed ${inputVal.key} @ ${inputVal.code} | The current input string: ${input.value}`);
 	console.log(`Current values based on current sequence of keys: ${results.join(", ")}`);
+	suggestions.replaceChildren();
 	// Conditional for readability:
 	if (results.length > 10) {
 		for (let i = 0; i < 10; i++) {
@@ -49,7 +49,10 @@ function showSuggestions(results, inputVal) {
 }
 
 function useSuggestion(e) {
-
+	console.log(e.srcElement.innerText);
+	// ez function just set value in the input n' remove all the children nodes
+	input.value = e.srcElement.innerText;
+	suggestions.replaceChildren();	
 }
 
 input.addEventListener('keyup', searchHandler);
